@@ -28,6 +28,7 @@ void TeleOperationButtonsArea::displayVelocities() {
   const int windowY = baseYMargin_ + buttonYMargin_ * 4 + buttonHeight_ * 3;
   const int textY =
       baseYMargin_ + buttonYMargin_ * 5 + buttonHeight_ * 3 + textMargin_;
+
   cvui::window(frame_, 15, windowY, 120, 40, "Linear velocity:");
   cvui::printf(frame_, 30, textY, 0.4, 0xff0000, "%.02f m/sec",
                twist_msg_.linear.x);
@@ -77,6 +78,6 @@ void TeleOperationButtonsArea::render() {
     twist_msg_.linear.x -= linear_velocity_step_;
   }
   // Display the current velocities
-  // displayVelocities();
+  displayVelocities();
   cvui::update();
 }

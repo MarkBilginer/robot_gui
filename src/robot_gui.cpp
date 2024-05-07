@@ -7,7 +7,7 @@ constexpr char WINDOW_NAME[] = "Robot Control Panel";
 
 RobotGui::RobotGui(ros::NodeHandle &nh)
     : nh_(nh), frame(cv::Mat(800, 300, CV_8UC3, cv::Scalar(49, 52, 49))),
-      generalInfoArea_(nh_, frame) {
+      generalInfoArea_(nh_, frame), teleoperationButtonsArea_(nh_, frame) {
   cvui::init(WINDOW_NAME);
 }
 
@@ -16,16 +16,20 @@ RobotGui::~RobotGui() {
 }
 
 void RobotGui::run() {
-  while (true) {
+  ros::Rate loop_rate(60);
+  while (ros::ok()) {
+    ros::spinOnce();
     render();
+    teleoperationButtonsArea_.publishTwist();
     cvui::imshow(WINDOW_NAME, frame);
-    int key = cv::waitKey(20);
+    int key = cv::waitKey(30);
 
     if (key == 27) {
       break;
     }
 
     ros::spinOnce();
+    loop_rate.sleep();
   }
   ros::shutdown();
 }
@@ -34,6 +38,6 @@ void RobotGui::render() {
   // Call render methods of each component
   // generalInfoArea_.update();
   generalInfoArea_.render();
-
+  teleoperationButtonsArea_.render();
   // Similarly for other components
 }

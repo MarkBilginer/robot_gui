@@ -20,6 +20,7 @@ private:
   std::vector<std::string> info_lines_;
   std::string topic_name_;
   cv::Mat &frame_;
+  bool info_changed_ = true;
 
   void msgCallback(const robotinfo_msgs::RobotInfo10Fields::ConstPtr &msg);
 };

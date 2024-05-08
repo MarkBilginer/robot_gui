@@ -2,6 +2,7 @@
 #define ROBOT_GUI_H
 
 #include "robot_gui/general_info_area.h"
+#include "robot_gui/robot_position_area.h"
 #include "robot_gui/teleoperation_buttons_area.h"
 #include "ros/ros.h"
 #include <opencv2/opencv.hpp>
@@ -19,6 +20,7 @@ private:
   cv::Mat frame;
   GeneralInfoArea generalInfoArea_;
   TeleOperationButtonsArea teleoperationButtonsArea_;
+  RobotPositionArea robotPositionArea_;
 
   void render();
 };

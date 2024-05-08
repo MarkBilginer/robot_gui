@@ -51,6 +51,4 @@ void RobotPositionArea::render() {
                cv_window_size_, window_titles_[2]);
   cvui::printf(frame_, window_z_text_position_x, windows_text_position_y,
                font_size_, font_color_, "%0.1f", data_.pose.pose.position.z);
-
-  cvui::update();
 };

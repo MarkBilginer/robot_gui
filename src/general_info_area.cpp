@@ -60,8 +60,6 @@ void GeneralInfoArea::render() {
       cvui::printf(frame_, 45, startY, 0.4, 0xFFFFFF, line.c_str());
       startY += lineHeight; // Move down for the next line
     }
-
-    cvui::update();
     info_changed_ = false;
   }
 }

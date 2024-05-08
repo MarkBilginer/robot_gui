@@ -1,6 +1,7 @@
 #ifndef ROBOT_GUI_H
 #define ROBOT_GUI_H
 
+#include "robot_gui/distance_tracker_area.h"
 #include "robot_gui/general_info_area.h"
 #include "robot_gui/robot_position_area.h"
 #include "robot_gui/teleoperation_buttons_area.h"
@@ -21,6 +22,7 @@ private:
   GeneralInfoArea generalInfoArea_;
   TeleOperationButtonsArea teleoperationButtonsArea_;
   RobotPositionArea robotPositionArea_;
+  DistanceTrackerArea distanceTrackerArea_;
 
   void render();
 };

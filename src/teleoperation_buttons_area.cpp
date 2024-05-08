@@ -79,5 +79,4 @@ void TeleOperationButtonsArea::render() {
   }
   // Display the current velocities
   displayVelocities();
-  cvui::update();
 }

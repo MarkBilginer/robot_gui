@@ -35,34 +35,42 @@
 
 ### Initial State
 ![Initial State of Robot Control Panel](/images/robot_control_panel_0.png)
+
 *The initial display of the Robot Control Panel presents a clean and organized interface awaiting data integration. It features fundamental robot control options—Forward, Backward, Left, Right, and Stop. Additionally, the interface includes placeholders for general information, which remain empty until relevant data is published. Key functional areas include a section for displaying the robot's current velocities, which update dynamically when the teleoperation buttons are pressed. The estimated robot position, based on odometry, updates autonomously. Lastly, the total distance traveled is updated through a manual trigger by pressing the 'Call' button.*
 
 ### Data Populated
 ![Data Populated in Robot Control Panel](/images/robot_control_panel_1.png)
+
 *The General Info section now displays data about the robot including its description, serial number, IP address, and firmware version. This helps users verify the robot's identity and operational status.*
 
 ### Extended Information
 ![Extended Information Display](/images/robot_control_panel_2.png)
+
 *Additional details are shown in the General Info section, including maximum payload and hydraulic oil parameters (temperature, tank fill level, and pressure), providing a comprehensive overview of the robot's current mechanical status.*
 
 ### Dynamic Updates
 ![Dynamic Updates on Robot Control Panel](/images/robot_control_panel_3.png)
+
 *This view of the Robot Control Panel illustrates how the interface dynamically updates in response to user interactions. Pressing the teleoperation buttons results in real-time updates to both the current velocities (linear and angular) and the robot's estimated position based on odometry. The display reflects these changes immediately, showing the new X, Y, and Z coordinates to accurately track the robot's movement.*
 
 ### Distance Calculation
 ![Distance Traveled Calculation](/images/robot_control_panel_4.png)
+
 *This view highlights the Distance Traveled feature of the Robot Control Panel. To update the total distance covered by the robot, the 'Call' button must be pressed. This action triggers a request to the distance_tracker_service, a separate ROS package available in this GitHub repository, which then calculates and displays the accumulated distance traveled as the robot moves. This integration showcases the modular design of the system, facilitating easy updates and maintenance.*
 
 ### Movement and Positioning
 ![Continued Movement and Positioning](/images/robot_control_panel_5.png)
+
 *Further movement and interaction with the buttons updates the interface with new positional data and velocity changes, showcasing the GUI's ability to track detailed dynamics of robot movement.*
 
 ### Simulation View Start
 ![Robot in Simulation Environment](/images/robot_simulation_gazebo_0.png)
+
 *Initial view of the robot in a simulated Gazebo environment, showcasing the GUI's integration with simulation tools for testing and development.*
 
 ### Simulation View with Movement
 ![Robot Movement in Simulation](/images/robot_simulation_gazebo_1.png)
+
 *The robot navigates within the simulated environment, highlighting the real-time interaction capabilities of the GUI with simulated robotics scenarios.*
 
 
